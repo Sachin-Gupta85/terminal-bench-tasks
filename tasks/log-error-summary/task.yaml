@@ -1,0 +1,22 @@
+instruction: |
+  The directory /app/logs contains application log files (*.log).
+  Every line has the format:
+
+    <ISO-8601 timestamp> <LEVEL> <service> <message...>
+
+  Count the lines whose LEVEL is exactly ERROR, grouped by service.
+  Write the result to /app/error_summary.json as a JSON object that maps
+  each service name to its ERROR count. Order the keys by count descending,
+  then by service name ascending. Services with zero ERROR lines must not appear.
+
+author: Sachin Gupta
+difficulty: easy
+category: data-processing
+tags:
+  - bash
+  - logs
+  - json
+parser_name: pytest
+max_agent_timeout_sec: 300
+max_test_timeout_sec: 60
+run_tests_in_same_shell: false
